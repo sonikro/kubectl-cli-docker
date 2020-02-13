@@ -19,6 +19,9 @@ RUN mv kustomize_kustomize.v3.2.3_linux_amd64 kustomize
 RUN chmod +x kustomize
 RUN mv kustomize /usr/bin/kustomize
 
+#install AZ
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+
 
 #Setup entrypoint
 COPY docker-entrypoint.sh /usr/local/bin/
