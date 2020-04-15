@@ -22,10 +22,11 @@ RUN mv kustomize /usr/bin/kustomize
 #install AZ
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
+# Install Envsubst
+RUN apt-get install -y gettext-base
 
 #Setup entrypoint
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 CMD [ "version" ]
-
